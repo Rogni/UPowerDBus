@@ -29,6 +29,7 @@ void QDBusFreedesktopProperty::set(QVariant value)
 
 void QDBusFreedesktopProperty::onProperyChanged(QVariant value)
 {
+    qDebug () << propertyName() << value;
     m_value = value;
 }
 

@@ -41,7 +41,7 @@ void QDBusFreedesktopInterface::removeDelegate(QDBusFreedesktopInterface::Delega
     m_delegates.remove(delegate->propertyName(), delegate);
 }
 
-void QDBusFreedesktopInterface::onPropertiesChanged(QMap<QString, QVariant> changed_properties, QList<QString> invalidated_properties)
+void QDBusFreedesktopInterface::onPropertiesChanged(QVariantMap changed_properties, QStringList invalidated_properties)
 {
     for (auto key : changed_properties.keys()) {
         for (auto &delegate : m_delegates.values(key)) {

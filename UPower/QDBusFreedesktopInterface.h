@@ -30,7 +30,7 @@ public:
 
     // QDBusFreedesktopInterfaceManager::Delegate interface
 public:
-    void onPropertiesChanged(QMap<QString, QVariant> changed_properties, QList<QString> invalidated_properties) override;
+    void onPropertiesChanged(QVariantMap changed_properties, QStringList invalidated_properties) override;
 
 
 private:

@@ -35,7 +35,7 @@ public:
         Delegate(QString interfaceName);
         virtual ~Delegate();
         QString interfaceName() const;
-        virtual void onPropertiesChanged(QMap<QString, QVariant> changed_properties, QList<QString> invalidated_properties);
+        virtual void onPropertiesChanged(QVariantMap changed_properties, QStringList invalidated_properties);
     private:
         QString m_interfaceName;
     };
@@ -74,10 +74,10 @@ public Q_SLOTS: // METHODS
     }
 
 private slots:
-    void onPropertiesChanged(const QString &interface_name, QMap<QString, QVariant> changed_properties, QList<QString> invalidated_properties);
+    void onPropertiesChanged(const QString &interface_name, QVariantMap changed_properties, QStringList invalidated_properties);
 
 Q_SIGNALS: // SIGNALS
-    void PropertiesChanged(const QString &interface_name, QMap<QString, QVariant> changed_properties, QList<QString> invalidated_properties);
+    void PropertiesChanged(const QString &interface_name, QVariantMap changed_properties, QStringList invalidated_properties);
 
 
 private:

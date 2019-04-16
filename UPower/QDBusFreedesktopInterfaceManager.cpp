@@ -20,9 +20,10 @@ QDBusFreedesktopInterfaceManager::~QDBusFreedesktopInterfaceManager()
 {
 }
 
-void QDBusFreedesktopInterfaceManager::onPropertiesChanged(const QString &interface_name, QMap<QString, QVariant> changed_properties, QList<QString> invalidated_properties)
+void QDBusFreedesktopInterfaceManager::onPropertiesChanged(const QString &interface_name, QVariantMap changed_properties, QStringList invalidated_properties)
 {
     if (!m_delegates.contains(interface_name)) return;
+
     for (auto &pair : m_delegates.values(interface_name)) {
         pair->onPropertiesChanged(changed_properties, invalidated_properties);
     }
@@ -41,4 +42,4 @@ QString QDBusFreedesktopInterfaceManager::Delegate::interfaceName() const
     return m_interfaceName;
 }
 
-void QDBusFreedesktopInterfaceManager::Delegate::onPropertiesChanged(QMap<QString, QVariant>, QList<QString> ) {}
+void QDBusFreedesktopInterfaceManager::Delegate::onPropertiesChanged(QVariantMap, QStringList) {}
