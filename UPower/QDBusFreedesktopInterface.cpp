@@ -19,7 +19,7 @@ QDBusFreedesktopInterface::~QDBusFreedesktopInterface()
 QVariant QDBusFreedesktopInterface::getProperty(QString propertyName)
 {
     if (m_interfaceManager) {
-        return m_interfaceManager->Get(interfaceName(), propertyName).argumentAt(0);
+        return m_interfaceManager->Get(interfaceName(), propertyName).value().variant();
     }
     return QVariant();
 }

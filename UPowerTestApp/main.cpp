@@ -19,5 +19,9 @@ int main (int argc, char *argv[])
         qDebug() << device.type();
     }
 
+    UPowerDevice device("/org/freedesktop/UPower/devices/DisplayDevice");
+    qDebug() << device.name();
+    qDebug() << device.type();
+
     return app.exec();
 }
