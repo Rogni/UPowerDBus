@@ -20,8 +20,6 @@
 #include <QtCore/QVariant>
 #include <QtDBus/QtDBus>
 
-#include <QDebug>
-
 class QDBusFreedesktopInterfaceManager: public QDBusAbstractInterface
 {
     Q_OBJECT
@@ -50,8 +48,6 @@ public:
 public Q_SLOTS: // METHODS
     inline QDBusPendingReply<QDBusVariant> Get(const QString &interface_name, const QString &property_name)
     {
-
-        qDebug () << "Get" << interface_name << property_name;
         QList<QVariant> argumentList;
         argumentList << QVariant::fromValue(interface_name) << QVariant::fromValue(property_name);
         return asyncCallWithArgumentList(QStringLiteral("Get"), argumentList);

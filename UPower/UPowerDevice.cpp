@@ -12,13 +12,7 @@ UPowerDevice::UPowerDevice(QString path):
     m_timeToEmpty(&m_interface, "TimeToEmpty"),
     m_percentage(&m_interface, "Percentage")
 {
-    qDebug () << "<><><><><><><><><><>";
-    qDebug () << m_nativePath.get();
-    qDebug () << m_type.get();
-    qDebug () << m_timeToFull.get();
-    qDebug () << m_timeToEmpty.get();
-    qDebug () << m_percentage.get();
-    qDebug () << "====================";
+
 }
 
 UPowerDevice::Type UPowerDevice::type()
