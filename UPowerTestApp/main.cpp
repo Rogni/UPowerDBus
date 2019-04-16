@@ -11,12 +11,14 @@ int main (int argc, char *argv[])
 
     auto devices = power.EnumerateDevices();
     auto v = devices.value();
-    qDebug() <<v.count() << power.onBattery();
+    qDebug() << "OnBattery: " << power.onBattery();
     for (auto p : v) {
         qDebug() << p.path();
         UPowerDevice device(p.path());
-        qDebug() << device.name();
-        qDebug() << device.type();
+        qDebug() << "Name: " << device.name();
+        qDebug() << "Type: " << device.type();
+        qDebug() << "Time to full: " << device.timeToFull();
+        qDebug() << "Time to empty: " << device.timeToEmpty();
     }
 
     UPowerDevice device("/org/freedesktop/UPower/devices/DisplayDevice");

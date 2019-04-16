@@ -24,3 +24,18 @@ QString UPowerDevice::name()
 {
     return m_nativePath.get().toString();
 }
+
+double UPowerDevice::percentage()
+{
+    return  m_percentage.get().toDouble();
+}
+
+quint32 UPowerDevice::timeToFull()
+{
+    return static_cast<quint32>( m_timeToFull.get().toInt() / 60 );
+}
+
+quint32 UPowerDevice::timeToEmpty()
+{
+    return static_cast<quint32>( m_timeToEmpty.get().toInt() / 60 );
+}

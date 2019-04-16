@@ -22,7 +22,10 @@ public:
 
     Type type();
     QString name();
-    quint8 percentage();
+    double percentage();
+    quint32 timeToFull(); // in minutes
+    quint32 timeToEmpty(); // in minutes
+
 
 
 private:

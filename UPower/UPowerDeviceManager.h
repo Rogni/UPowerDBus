@@ -12,11 +12,9 @@ public:
 
     UPowerDeviceManager(QObject *parent = nullptr);
 
-
     bool onBattery();
 
 public Q_SLOTS:
-    /*QDBusObjectPath*/
     inline QDBusPendingReply<QList<QDBusObjectPath>> EnumerateDevices()
     {
         QList<QVariant> argumentList;
