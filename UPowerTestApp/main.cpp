@@ -11,7 +11,7 @@ int main (int argc, char *argv[])
 
     auto devices = power.EnumerateDevices();
     auto v = devices.value();
-    qDebug() <<v.count();
+    qDebug() <<v.count() << power.onBattery();
     for (auto p : v) {
         qDebug() << p.path();
         UPowerDevice device(p.path());

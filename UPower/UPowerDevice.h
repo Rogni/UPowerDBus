@@ -22,6 +22,8 @@ public:
 
     Type type();
     QString name();
+    quint8 percentage();
+
 
 private:
     QDBusFreedesktopInterfaceManager m_interfaceManager;

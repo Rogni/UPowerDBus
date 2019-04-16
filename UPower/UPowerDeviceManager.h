@@ -2,6 +2,7 @@
 #define UPOWERDEVICEMANAGER_H
 
 #include <QtDBus/QtDBus>
+#include "QDBusFreedesktopProperty.h"
 
 class UPowerDeviceManager: public QDBusAbstractInterface
 {
@@ -12,6 +13,8 @@ public:
     UPowerDeviceManager(QObject *parent = nullptr);
 
 
+    bool onBattery();
+
 public Q_SLOTS:
     /*QDBusObjectPath*/
     inline QDBusPendingReply<QList<QDBusObjectPath>> EnumerateDevices()
@@ -21,6 +24,12 @@ public Q_SLOTS:
     }
 
 Q_SIGNALS:
+
+private:
+    QDBusFreedesktopInterfaceManager m_interfaceManager;
+    QDBusFreedesktopInterface m_interface;
+
+    QDBusFreedesktopProperty m_onBattery;
 
 };
 
