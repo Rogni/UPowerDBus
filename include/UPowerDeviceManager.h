@@ -2,7 +2,7 @@
 #define UPOWERDEVICEMANAGER_H
 
 #include <QtDBus/QtDBus>
-#include "QDBusFreedesktopProperty.h"
+#include <QDBusFreedesktopProperty.h>
 
 class UPowerDeviceManager: public QDBusAbstractInterface
 {

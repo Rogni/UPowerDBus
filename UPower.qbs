@@ -5,6 +5,7 @@ Project {
         Depends {name: "cpp" }
         Depends {name: "Qt.core" }
         Depends {name: "Qt.dbus" }
+        Depends {name: "QDbusFreedesktopProperty" }
         files: [
             "UPowerDevice.cpp",
             "UPowerDevice.h",
@@ -13,26 +14,12 @@ Project {
         ]
         name: "UPower"
 
-
-        Group {
-            name: "QDBusProperty"
-            files: [
-                "QDBusFreedesktopInterface.cpp",
-                "QDBusFreedesktopInterface.h",
-                "QDBusFreedesktopInterfaceManager.cpp",
-                "QDBusFreedesktopInterfaceManager.h",
-                "QDBusFreedesktopProperty.cpp",
-                "QDBusFreedesktopProperty.h",
-            ]
-        }
-
         Export {
             Depends {
                 name: "cpp"
             }
             cpp.includePaths: product.sourceDirectory
             cpp.defines: ["USING_" + product.name.toUpperCase()]
-
         }
     }
 }

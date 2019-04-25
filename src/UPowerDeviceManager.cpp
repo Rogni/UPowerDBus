@@ -1,4 +1,4 @@
-#include "UPowerDeviceManager.h"
+#include <UPowerDeviceManager.h>
 
 const QString UPOWER_INTERFACE_NAME = "org.freedesktop.UPower";
 const QString UPOWER_INTERFACE_PATH = "/org/freedesktop/UPower";

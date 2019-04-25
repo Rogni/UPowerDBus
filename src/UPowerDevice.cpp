@@ -1,5 +1,4 @@
-#include "UPowerDevice.h"
-#include <QDebug>
+#include <UPowerDevice.h>
 
 UPowerDevice::UPowerDevice(QString path):
     m_interfaceManager("org.freedesktop.UPower",
@@ -10,7 +9,8 @@ UPowerDevice::UPowerDevice(QString path):
     m_type(&m_interface, "Type"),
     m_timeToFull(&m_interface, "TimeToFull"),
     m_timeToEmpty(&m_interface, "TimeToEmpty"),
-    m_percentage(&m_interface, "Percentage")
+    m_percentage(&m_interface, "Percentage"),
+    m_state(&m_interface, "State")
 {
 
 }
@@ -18,6 +18,11 @@ UPowerDevice::UPowerDevice(QString path):
 UPowerDevice::Type UPowerDevice::type()
 {
     return static_cast<Type>(m_type.get().toUInt());
+}
+
+UPowerDevice::State UPowerDevice::state()
+{
+    return static_cast<State>(m_state.get().toUInt());
 }
 
 QString UPowerDevice::name()
