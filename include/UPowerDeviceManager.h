@@ -6,6 +6,7 @@
 
 class UPowerDeviceManager: public QDBusAbstractInterface
 {
+    Q_OBJECT
 public:
     static inline const char *staticInterfaceName()
     { return "org.freedesktop.UPower"; }
