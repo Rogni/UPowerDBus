@@ -12,23 +12,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set (UPowerSource 
     src/UPowerDevice.cpp
     src/UPowerDeviceManager.cpp
-    )
-
-set(UPowerIncludeQObjects
     include/UPowerDeviceManager.h
-)    
+    )
 
 set(UPowerInclude
     include/UPowerDevice.h
-    ${UPowerIncludeQObjects}
+    include/UPowerDeviceManager.h
 )
-
-qt5_wrap_cpp(UPowerIncludeMock ${UPowerIncludeQObjects})
 
 # Find the Qt5Core library
 find_package(Qt5Core CONFIG REQUIRED)
 
-add_library(UPower STATIC ${UPowerSource} ${UPowerIncludeMock})
+add_library(UPower STATIC ${UPowerSource})
 set_property(TARGET UPower PROPERTY CXX_STANDARD 17)
 set_target_properties(UPower PROPERTIES PUBLIC_HEADER "${UPowerInclude}")
 
