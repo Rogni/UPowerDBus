@@ -9,16 +9,19 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set (UPowerSource 
-    src/UPowerDevice.cpp
-    src/UPowerDeviceManager.cpp
-    include/UPowerDeviceManager.h
-    )
-
 set(UPowerInclude
     include/UPowerDevice.h
     include/UPowerDeviceManager.h
 )
+
+set (UPowerSource 
+    src/UPowerDevice.cpp
+    src/UPowerDeviceManager.cpp
+    include/UPowerDeviceManager.h
+    ${UPowerInclude}
+    )
+
+
 
 # Find the Qt5Core library
 find_package(Qt5Core CONFIG REQUIRED)
