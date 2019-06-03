@@ -1,16 +1,19 @@
 import qbs
 
 Project {
+    references: [
+        "QDbusFreedesktopProperty/QDbusFreedesktopProperty.qbs"
+    ]
     StaticLibrary {
         Depends {name: "cpp" }
         Depends {name: "Qt.core" }
         Depends {name: "Qt.dbus" }
         Depends {name: "QDbusFreedesktopProperty" }
         files: [
-            "UPowerDevice.cpp",
-            "UPowerDevice.h",
-            "UPowerDeviceManager.cpp",
-            "UPowerDeviceManager.h",
+            "src/UPowerDevice.cpp",
+            "include/UPowerDevice.h",
+            "src/UPowerDeviceManager.cpp",
+            "include/UPowerDeviceManager.h",
         ]
         name: "UPower"
 
